@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta-name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}ToDo App{% endblock %}</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: #5f7f31;
+            font-family: 'Courier New', monospace;
+        }
+
+        .navbar {
+            background: #194B17 !important;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            color: white !important;
+        }
+
+        .nav-link {
+            color: white !important;
+            font-weight: bold;
+            margin-left: 15px;
+        }
+
+        .task-box {
+            background: #d9d9d9;
+            border-radius: 10px;
+            padding: 10px 20px;
+            margin-top: 20px;
+        }
+
+        .task-header {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .task-table th {
+            background: rgb(26, 118, 32);
+            color: white;
+            padding: 10px;
+        }
+
+        .task-table td {
+            background: #4d4d4d;
+            color: white;
+            padding: 12px;
+            font-size: 15px;
+        }
+
+        .delete-btn {
+            background: #c0392b;
+            color: white;
+        }
+    </style>
+
+    {% block extra_css %}{% endblock %}
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg">
+    <div class="container d-flex justify-content-between">
+        <a class="navbar-brand" href="{% url 'home' %}">ToDo App</a>
+
+        <!-- ✅ NAV LINKS -->
+        <div class="d-flex">
+            <a href="{% url 'create_task' %}" class="nav-link">Create Task</a>
+            <a href="{% url 'completed_tasks' %}" class="nav-link">Completed Tasks</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-4">
+    {% block content %}
+    {% endblock %}
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+
+{% block extra_js %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,79 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Body */
+body {
+    background-color: #ffffff;
+    color: #2e2e2e;
+}
+
+/* ================= HERO SECTION ================= */
+
+.hero-section {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    /* White + Green Gradient */
+    background: linear-gradient(to bottom, #ffffff 60%, #d4f5e9);
+    padding: 20px;
+}
+
+.hero-section h1 {
+    font-size: 48px;
+    color: #1b5e20;   /* Dark Green */
+    margin-bottom: 20px;
+}
+
+.hero-section p {
+    font-size: 18px;
+    max-width: 600px;
+    color: #4a4a4a;
+    margin-bottom: 30px;
+}
+
+/* Button */
+.btn-start {
+    text-decoration: none;
+    background-color: #2e7d32;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-size: 16px;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-start:hover {
+    background-color: #1b5e20;
+    transform: translateY(-3px);
+}
+
+/* ================= CONTACT SECTION ================= */
+
+.contact-section {
+    background-color: #1b5e20;
+    padding: 30px 0;
+    text-align: center;
+}
+
+.icons i {
+    font-size: 22px;
+    color: white;
+    margin: 0 15px;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.icons i:hover {
+    color: #a5d6a7;
+    transform: scale(1.2);
+}

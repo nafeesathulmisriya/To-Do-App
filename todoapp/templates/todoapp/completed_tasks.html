@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block title %}Completed Tasks{% endblock %}
+
+{% block content %}
+<style>
+    .details-box {
+        background: #1c1f26;
+        color: white;
+        width: 95%;
+        margin: 20px auto;
+        padding: 20px;
+        border-radius: 12px;
+    }
+    .table-header {
+        background: #2c2f36;
+        color: white;
+    }
+    .table-row {
+        background: #20232a;
+    }
+    .table td, .table th {
+        padding: 10px;
+        font-size: 14px;
+    }
+</style>
+
+<div class="details-box">
+    <h3 class="mb-3 text-center">Completed Tasks</h3>
+
+    <table class="table table-dark table-hover">
+        <thead class="table-header">
+            <tr>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Created On</th>
+                <th>Completed On</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for task in tasks %}
+            <tr class="table-row">
+                <td>{{ task.title }}</td>
+                <td>{{ task.category }}</td>
+                <td>{{ task.created_on|date:"d - m - Y | h:i A" }}</td>
+                <td>{{ task.due_date|date:"d - m - Y | h:i A" }}</td>
+                <td>
+                    <span class="badge bg-success">Completed</span>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="5" class="text-center">
+                    No completed tasks found
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

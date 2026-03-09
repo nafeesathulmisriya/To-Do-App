@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+   <link rel="stylesheet" href="{% static 'todoapp/css/home.css' %}">
+</head>
+
+<body>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Todo List</h1>
+            <p>
+                Stay organized and get things done with our simple 
+                and efficient Todo list app.
+            </p>
+            <a href="{% url 'login' %}" class="btn-start">
+                Get Started
+            </a>
+        </div>
+    </section>
+
+   
+
+    <!-- ========== CONTACT / FOOTER SECTION ========== -->
+    <footer class="contact-section">
+        <h3>Connect With Us</h3>
+
+        <div class="icons">
+            <i class="fa fa-envelope"></i>
+            <i class="fa fa-paper-plane"></i>
+            <i class="fa fa-linkedin"></i>
+        </div>
+
+        <p class="copyright">
+            © 2026 Todo List App | Designed by Nafeesathul Misriya
+        </p>
+    </footer>
+
+</body>
+</html>

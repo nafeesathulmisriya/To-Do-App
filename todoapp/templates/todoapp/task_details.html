@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% block title %}Task Details{% endblock %}
+
+{% block content %}
+<style>
+    .details-box {
+        background: #dcdcdc;
+        width: 90%;
+        margin: 20px auto;
+        padding: 20px;
+        border-radius: 12px;
+    }
+    .details-header {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    .table-header {
+        background: #1f1f1f;
+        color: white;
+        font-weight: bold;
+    }
+    .table-row {
+        background: #ffffff;
+        font-weight: bold;
+    }
+    .table td, .table th {
+        padding: 10px;
+        font-size: 14px;
+    }
+</style>
+
+<div class="details-box">
+    <div class="details-header">
+        All Tasks
+    </div>
+
+    <table class="table">
+        <thead class="table-header">
+            <tr>
+                <th>Title</th>
+                <th>Created On</th>
+                <th>Due / Completed Date</th>
+                <th>Status / Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for task in tasks %}
+            <tr class="table-row">
+                <td>{{ task.title }}</td>
+                <td>{{ task.created_on|date:"d - m - y | h:i A" }}</td>
+
+                <td>
+                    {% if task.status == "Completed" %}
+                        Completed
+                    {% else %}
+                        {{ task.due_date|date:"d - m - Y | h:i A" }}
+                    {% endif %}
+                </td>
+
+                <td>
+                    {% if task.status == "Pending" %}
+                        <span class="badge bg-warning text-dark">Pending</span>
+
+                        <form method="post"
+                              action="{% url 'mark_completed' task.id %}"
+                              style="display:inline;">
+                            {% csrf_token %}
+                            <button type="submit"
+                                    class="btn btn-success btn-sm ms-1">
+                                Complete
+                            </button>
+                        </form>
+                    {% else %}
+                        <span class="badge bg-success">Completed</span>
+                    {% endif %}
+
+                    <!-- ✅ DELETE BUTTON -->
+                    <form method="post"
+                          action="{% url 'delete_task' task.id %}"
+                          style="display:inline;">
+                        {% csrf_token %}
+                        <button type="submit"
+                                class="btn btn-danger btn-sm ms-1"
+                                onclick="return confirm('Are you sure you want to delete this task?');">
+                            Delete
+                        </button>
+                    </form>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="4" class="text-center">
+                    No tasks available
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

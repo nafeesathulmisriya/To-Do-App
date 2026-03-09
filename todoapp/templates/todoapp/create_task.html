@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Create Task{% endblock %}
+
+{% block content %}
+<div class="create-box">
+    
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <label>Task Title</label>
+        <input type="text" name="title" class="form-control mb-3" required>
+
+        <label>Task Description</label>
+        <textarea name="description" class="form-control mb-3"></textarea>
+
+
+        <label>Created Date</label>
+        <input type="datetime-local" name="created_on" class="form-control mb-3">
+
+        <label>Due Date</label>
+        <input type="datetime-local" name="due_date" class="form-control mb-3">
+
+        <label>Category</label>
+        <select name="category" class="form-control mb-3">
+            <option>Work</option>
+            <option>Personal</option>
+            <option>Shopping</option>
+            <option>Others</option>
+        </select>
+
+        <!-- ✅ submit type fixed -->
+        <button type="submit" class="submit-btn">Submit</button>
+    </form>
+</div>
+{% endblock %}
