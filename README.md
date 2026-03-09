@@ -54,9 +54,12 @@ The objective of this project is to develop a simple and efficient task manageme
 ### Home Page
 ![Home Page](todoapp/static/screenshots/home.png)
 
+### Sign Up Page
+![Sign Up Page](todoapp/static/screenshots/sign up.png)
+
 ### Task List
 ![Task List](todoapp/static/screenshots/task list.png)
 
 ### Create Task
-![Create Task](todoapp/static/screenshots/createtask.png)
+![Create Task](todoapp/static/screenshots/create task.png)
 
