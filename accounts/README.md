@@ -48,8 +48,13 @@ Database-SQLite
 The objective of this project is to develop a simple and efficient task management system that allows users to organize their daily activities, set deadlines, 
 and track completed tasks through a web-based platform.
 
-## Project Preview
+## Screenshots
 
-![Home](static/screenshots/home.png)
-![Add Task](static/screenshots/create_task.png)
-![Task List](static/screenshots/task_list.png)
+### Home Page
+![Home Page](todoapp/static/screenshots/home.png)
+
+### Task List
+![Task List](todoapp/static/screenshots/task_list.png)
+
+### Create Task
+![Create Task](todoapp/static/screenshots/create_task.png)
