@@ -59,3 +59,4 @@ The objective of this project is to develop a simple and efficient task manageme
 
 ### Create Task
 ![Create Task](todoapp/static/screenshots/create task.png)
+
